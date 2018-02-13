@@ -12,22 +12,24 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
+    enum MenuAttributItem: String {
+        case Sensors
+        case Share
+        case Location
+        case Settings
+        case Logout
+    }
+    
     let menuAttributItems = ["Sensors","Share","Location","Settings","Logout"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -36,7 +38,6 @@ class MenuTableViewController: UITableViewController {
         return menuAttributItems.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuAttributesCell", for: indexPath)
         
@@ -44,8 +45,6 @@ class MenuTableViewController: UITableViewController {
         
         let imageName = UIImage(named: menuAttributItems[indexPath.row])
         cell.imageView?.image = imageName
-        cell.imageView?.frame = CGRect(x:0,y:0,width:20,height:20)
-//        cell.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         
         let seperatorImageView = UIImageView.init(image: UIImage.init(named: "Separator.png"))
         seperatorImageView.frame = CGRect(x: 0, y: cell.contentView.frame.size.height - 2.0,  width: cell.contentView.frame.size.width, height: 2)
@@ -54,6 +53,19 @@ class MenuTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        let selectedItem = menuAttributItems[indexPath.row]
+        let selectedMenuItem: MenuAttributItem = MenuAttributItem (rawValue: selectedItem)!
+        
+        switch selectedMenuItem{
+            case .Sensors  : NotificationCenter.default.post(name: NSNotification.Name("Sensors"), object: nil)
+            case .Share    : NotificationCenter.default.post(name: NSNotification.Name("Share"), object: nil)
+            case .Location : NotificationCenter.default.post(name: NSNotification.Name("Location"), object: nil)
+            case .Settings : NotificationCenter.default.post(name: NSNotification.Name("Settings"), object: nil)
+            case .Logout   : NotificationCenter.default.post(name: NSNotification.Name("Logout"), object: nil)
+        }
+    }
 }
 
 

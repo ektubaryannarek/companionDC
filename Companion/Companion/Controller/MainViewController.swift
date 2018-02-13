@@ -27,9 +27,53 @@ class MainViewController: UIViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showSession),
+                                               name: NSNotification.Name("Sensors"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showSettings),
+                                               name: NSNotification.Name("Settings"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showLocation),
+                                               name: NSNotification.Name("Location"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showLogout),
+                                               name: NSNotification.Name("Logout"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showShare),
+                                               name: NSNotification.Name("Share"),
+                                               object: nil)
+        
         let gesture = UITapGestureRecognizer(target: self, action: #selector(MainViewController.hideHamburgerMenu))
         self.dimView.addGestureRecognizer(gesture)
     }
+    
+    @objc func showSession() {
+        performSegue(withIdentifier: "sensorsSegue", sender: nil)
+    }
+    
+    @objc func showShare() {
+        performSegue(withIdentifier: "shareSegue", sender: nil)
+    }
+    
+    @objc func showLogout() {
+        performSegue(withIdentifier: "logoutSegue", sender: nil)
+    }
+    
+    
+    @objc func showSettings() {
+        performSegue(withIdentifier: "settingsSegue", sender: nil)
+    }
+    
+    @objc func showLocation() {
+        performSegue(withIdentifier: "locationSegue", sender: nil)
+    }
+    
     
     func hideHamburgerMenu(){
         dimView.isHidden = true

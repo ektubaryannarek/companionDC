@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,11 @@
 		EBAB7D74203309430047C7F5 /* Sensors.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAB7D6F203309430047C7F5 /* Sensors.png */; };
 		EBAB7D76203309D30047C7F5 /* Location.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAB7D75203309D20047C7F5 /* Location.png */; };
 		EBAB7D7D20330A910047C7F5 /* Separator.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAB7D7C20330A900047C7F5 /* Separator.png */; };
+		EBAB7D7F20331FD70047C7F5 /* SensorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB7D7E20331FD70047C7F5 /* SensorsViewController.swift */; };
+		EBAB7D832033221C0047C7F5 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB7D822033221C0047C7F5 /* LocationViewController.swift */; };
+		EBAB7D85203322860047C7F5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB7D84203322860047C7F5 /* SettingsViewController.swift */; };
+		EBAB7D8720332B450047C7F5 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB7D8620332B450047C7F5 /* LogoutViewController.swift */; };
+		EBAB7D8920332B5F0047C7F5 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB7D8820332B5F0047C7F5 /* ShareViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		EBAB7D6F203309430047C7F5 /* Sensors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sensors.png; sourceTree = "<group>"; };
 		EBAB7D75203309D20047C7F5 /* Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location.png; sourceTree = "<group>"; };
 		EBAB7D7C20330A900047C7F5 /* Separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Separator.png; sourceTree = "<group>"; };
+		EBAB7D7E20331FD70047C7F5 /* SensorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsViewController.swift; sourceTree = "<group>"; };
+		EBAB7D822033221C0047C7F5 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		EBAB7D84203322860047C7F5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		EBAB7D8620332B450047C7F5 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		EBAB7D8820332B5F0047C7F5 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,11 @@
 				EB9A21362031EC0800D8B49A /* MainViewController.swift */,
 				EB9A21382031F37100D8B49A /* MYIAWebViewController.swift */,
 				EB9A213A2031F38A00D8B49A /* MenuTableViewController.swift */,
+				EBAB7D7E20331FD70047C7F5 /* SensorsViewController.swift */,
+				EBAB7D822033221C0047C7F5 /* LocationViewController.swift */,
+				EBAB7D84203322860047C7F5 /* SettingsViewController.swift */,
+				EBAB7D8620332B450047C7F5 /* LogoutViewController.swift */,
+				EBAB7D8820332B5F0047C7F5 /* ShareViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -140,7 +155,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = "Erica Millado";
+				ORGANIZATIONNAME = "Double Coconut";
 				TargetAttributes = {
 					454751BC1F19856F002AC524 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -150,7 +165,7 @@
 				};
 			};
 			buildConfigurationList = 454751B81F19856F002AC524 /* Build configuration list for PBXProject "Companion" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -192,8 +207,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB9A213B2031F38A00D8B49A /* MenuTableViewController.swift in Sources */,
+				EBAB7D7F20331FD70047C7F5 /* SensorsViewController.swift in Sources */,
+				EBAB7D85203322860047C7F5 /* SettingsViewController.swift in Sources */,
 				EB9A21372031EC0800D8B49A /* MainViewController.swift in Sources */,
+				EBAB7D832033221C0047C7F5 /* LocationViewController.swift in Sources */,
 				EB9A212E2031E7CB00D8B49A /* AppDelegate.swift in Sources */,
+				EBAB7D8920332B5F0047C7F5 /* ShareViewController.swift in Sources */,
+				EBAB7D8720332B450047C7F5 /* LogoutViewController.swift in Sources */,
 				EB9A21392031F37100D8B49A /* MYIAWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

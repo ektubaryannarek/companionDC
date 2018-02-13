@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var MYIAWebContainerView: UIView!
     @IBOutlet weak var dimView: UIView!
     @IBOutlet weak var menuTableLeadingConstraint: NSLayoutConstraint!
+    let animationDuration = 0.2
     var hamburgerMenuIsVisible = false
     
     @IBAction func hamburgerBtnTapped(_ sender: Any) {
@@ -26,7 +27,7 @@ class MainViewController: UIViewController {
             hamburgerMenuIsVisible = false
         }
         
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
         }) { (animationComplete) in
             print("The animation is complete!")

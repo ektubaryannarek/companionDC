@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		454751CB1F19856F002AC524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454751C91F19856F002AC524 /* LaunchScreen.storyboard */; };
 		EB5261A62034706100BB31BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB5261A52034706100BB31BF /* Assets.xcassets */; };
+		EB5261A9203479EC00BB31BF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5261A8203479EC00BB31BF /* GradientView.swift */; };
+		EB5261AB20347F1300BB31BF /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5261AA20347F1300BB31BF /* WelcomeScreenViewController.swift */; };
+		EB5261AD203485C400BB31BF /* DisplayQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5261AC203485C400BB31BF /* DisplayQRCodeViewController.swift */; };
+		EB5261B0203487B700BB31BF /* ScanQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5261AF203487B700BB31BF /* ScanQRCodeViewController.swift */; };
+		EB5261B2203487C700BB31BF /* ConnectWithMyiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5261B1203487C700BB31BF /* ConnectWithMyiaViewController.swift */; };
+		EB5261B4203487D300BB31BF /* CongratulationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5261B3203487D300BB31BF /* CongratulationsViewController.swift */; };
+		EB5261B6203487EC00BB31BF /* EnterCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5261B5203487EC00BB31BF /* EnterCodeViewController.swift */; };
 		EB9A212E2031E7CB00D8B49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A21292031E7CB00D8B49A /* AppDelegate.swift */; };
 		EB9A21342031EBB300D8B49A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9A21332031EBB300D8B49A /* Main.storyboard */; };
 		EB9A21372031EC0800D8B49A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A21362031EC0800D8B49A /* MainViewController.swift */; };
@@ -25,6 +32,13 @@
 		454751CA1F19856F002AC524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		454751CC1F19856F002AC524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB5261A52034706100BB31BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Companion/Assets.xcassets; sourceTree = "<group>"; };
+		EB5261A8203479EC00BB31BF /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		EB5261AA20347F1300BB31BF /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
+		EB5261AC203485C400BB31BF /* DisplayQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayQRCodeViewController.swift; sourceTree = "<group>"; };
+		EB5261AF203487B700BB31BF /* ScanQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeViewController.swift; sourceTree = "<group>"; };
+		EB5261B1203487C700BB31BF /* ConnectWithMyiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWithMyiaViewController.swift; sourceTree = "<group>"; };
+		EB5261B3203487D300BB31BF /* CongratulationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsViewController.swift; sourceTree = "<group>"; };
+		EB5261B5203487EC00BB31BF /* EnterCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewController.swift; sourceTree = "<group>"; };
 		EB9A21292031E7CB00D8B49A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Controller/AppDelegate.swift; sourceTree = "<group>"; };
 		EB9A21332031EBB300D8B49A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EB9A21362031EC0800D8B49A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +75,7 @@
 		454751BF1F19856F002AC524 /* Companion */ = {
 			isa = PBXGroup;
 			children = (
+				EB5261A7203479D700BB31BF /* View */,
 				EB9A21292031E7CB00D8B49A /* AppDelegate.swift */,
 				EB9A21242031D41200D8B49A /* Controller */,
 				EB9A21332031EBB300D8B49A /* Main.storyboard */,
@@ -82,9 +97,31 @@
 			path = "Menu Item View Controllers";
 			sourceTree = "<group>";
 		};
+		EB5261A7203479D700BB31BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB5261A8203479EC00BB31BF /* GradientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB5261AE203485DC00BB31BF /* Login Flow View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EB5261AC203485C400BB31BF /* DisplayQRCodeViewController.swift */,
+				EB5261AA20347F1300BB31BF /* WelcomeScreenViewController.swift */,
+				EB5261AF203487B700BB31BF /* ScanQRCodeViewController.swift */,
+				EB5261B1203487C700BB31BF /* ConnectWithMyiaViewController.swift */,
+				EB5261B3203487D300BB31BF /* CongratulationsViewController.swift */,
+				EB5261B5203487EC00BB31BF /* EnterCodeViewController.swift */,
+			);
+			path = "Login Flow View Controllers";
+			sourceTree = "<group>";
+		};
 		EB9A21242031D41200D8B49A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EB5261AE203485DC00BB31BF /* Login Flow View Controllers */,
 				EB5261A420346A0100BB31BF /* Menu Item View Controllers */,
 				EB9A21362031EC0800D8B49A /* MainViewController.swift */,
 				EB9A21382031F37100D8B49A /* MYIAWebViewController.swift */,
@@ -166,9 +203,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5261B6203487EC00BB31BF /* EnterCodeViewController.swift in Sources */,
 				EB9A213B2031F38A00D8B49A /* MenuTableViewController.swift in Sources */,
+				EB5261B2203487C700BB31BF /* ConnectWithMyiaViewController.swift in Sources */,
+				EB5261AD203485C400BB31BF /* DisplayQRCodeViewController.swift in Sources */,
+				EB5261B4203487D300BB31BF /* CongratulationsViewController.swift in Sources */,
+				EB5261B0203487B700BB31BF /* ScanQRCodeViewController.swift in Sources */,
 				EBAB7D7F20331FD70047C7F5 /* SensorsViewController.swift in Sources */,
+				EB5261A9203479EC00BB31BF /* GradientView.swift in Sources */,
 				EBAB7D85203322860047C7F5 /* SettingsViewController.swift in Sources */,
+				EB5261AB20347F1300BB31BF /* WelcomeScreenViewController.swift in Sources */,
 				EB9A21372031EC0800D8B49A /* MainViewController.swift in Sources */,
 				EBAB7D832033221C0047C7F5 /* LocationViewController.swift in Sources */,
 				EB9A212E2031E7CB00D8B49A /* AppDelegate.swift in Sources */,

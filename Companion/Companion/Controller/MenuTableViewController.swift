@@ -24,6 +24,7 @@ class MenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,7 +50,7 @@ class MenuTableViewController: UITableViewController {
         let seperatorImageView = UIImageView.init(image: UIImage.init(named: "Separator"))
         seperatorImageView.frame = CGRect(x: 0, y: cell.contentView.frame.size.height - 2.0,  width: cell.contentView.frame.size.width, height: 2)
         cell.contentView.addSubview(seperatorImageView)
-        
+
         return cell
     }
     

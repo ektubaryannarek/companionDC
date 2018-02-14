@@ -46,7 +46,7 @@ class MenuTableViewController: UITableViewController {
         let imageName = UIImage(named: menuAttributItems[indexPath.row])
         cell.imageView?.image = imageName
         
-        let seperatorImageView = UIImageView.init(image: UIImage.init(named: "Separator.png"))
+        let seperatorImageView = UIImageView.init(image: UIImage.init(named: "Separator"))
         seperatorImageView.frame = CGRect(x: 0, y: cell.contentView.frame.size.height - 2.0,  width: cell.contentView.frame.size.width, height: 2)
         cell.contentView.addSubview(seperatorImageView)
         

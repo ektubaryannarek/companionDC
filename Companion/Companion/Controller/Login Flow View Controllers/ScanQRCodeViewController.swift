@@ -11,13 +11,18 @@ import UIKit
 
 class ScanQRCodeViewController: UIViewController {
     @IBOutlet weak var nextButtonView: UIView!
-        
+    @IBOutlet weak var troubleMessageView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeNavBarTransparent()
         
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(nextButtonClicked))
-        self.nextButtonView.addGestureRecognizer(gesture)
+        let nextButtonGesture = UITapGestureRecognizer(target: self, action: #selector(nextButtonClicked))
+        let troubleMessageGesture = UITapGestureRecognizer(target: self, action: #selector(troubleButtonClicked))
+
+        self.nextButtonView.addGestureRecognizer(nextButtonGesture)
+        self.troubleMessageView.addGestureRecognizer(troubleMessageGesture)
+
     }
     
     func makeNavBarTransparent(){
@@ -28,6 +33,10 @@ class ScanQRCodeViewController: UIViewController {
     }
     
     func nextButtonClicked(){
+        performSegue(withIdentifier: "toConnectWithMyiaFromScan", sender: nil)
+    }
+    
+    func troubleButtonClicked(){
         performSegue(withIdentifier: "toEnterCode", sender: nil)
     }
 }

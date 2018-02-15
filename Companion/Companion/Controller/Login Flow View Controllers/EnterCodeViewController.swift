@@ -29,7 +29,7 @@ class EnterCodeViewController: UIViewController {
     }
     
     func nextButtonClicked(){
-        performSegue(withIdentifier: "toConnectWithMyia", sender: nil)
+        performSegue(withIdentifier: "toConnectWithMyiaFromEnter", sender: nil)
     }
     
 }

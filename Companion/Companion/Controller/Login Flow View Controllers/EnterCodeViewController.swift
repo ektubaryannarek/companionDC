@@ -11,9 +11,14 @@ import UIKit
 
 class EnterCodeViewController: UIViewController {
     
+    @IBOutlet weak var nextButtonView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeNavBarTransparent()
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(nextButtonClicked))
+        self.nextButtonView.addGestureRecognizer(gesture)
     }
     
     func makeNavBarTransparent(){
@@ -22,4 +27,9 @@ class EnterCodeViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
     }
+    
+    func nextButtonClicked(){
+        performSegue(withIdentifier: "toConnectWithMyia", sender: nil)
+    }
+    
 }

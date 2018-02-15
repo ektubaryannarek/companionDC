@@ -20,8 +20,8 @@ class WelcomeScreenViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(nextButtonClicked))
         self.nextButtonView.addGestureRecognizer(gesture)
     }
-    
-    func makeNavBarTransparent(){
+
+    private func makeNavBarTransparent(){
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -29,7 +29,7 @@ class WelcomeScreenViewController: UIViewController {
     }
     
     func nextButtonClicked(){
-        performSegue(withIdentifier: "welcomeToDisplayQR", sender: nil)
+        performSegue(withIdentifier: "toDisplayQR", sender: nil)
     }
     
 }

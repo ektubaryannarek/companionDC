@@ -11,12 +11,14 @@ import UIKit
 
 class DisplayQRCodeViewController: UIViewController {
     
+    @IBOutlet weak var nextButtonView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeNavBarTransparent()
         
-//        let gesture = UITapGestureRecognizer(target: self, action: #selector(nextButtonClicked))
-//        self.mainView.addGestureRecognizer(gesture)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(nextButtonClicked))
+        self.nextButtonView.addGestureRecognizer(gesture)
     }
     
     func makeNavBarTransparent(){
@@ -27,6 +29,7 @@ class DisplayQRCodeViewController: UIViewController {
     }
     
     func nextButtonClicked () {
-        
+        performSegue(withIdentifier: "toScanQR", sender: nil)
     }
+
 }

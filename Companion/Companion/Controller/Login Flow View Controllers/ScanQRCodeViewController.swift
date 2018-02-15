@@ -10,10 +10,14 @@ import Foundation
 import UIKit
 
 class ScanQRCodeViewController: UIViewController {
-
+    @IBOutlet weak var nextButtonView: UIView!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         makeNavBarTransparent()
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(nextButtonClicked))
+        self.nextButtonView.addGestureRecognizer(gesture)
     }
     
     func makeNavBarTransparent(){
@@ -21,5 +25,9 @@ class ScanQRCodeViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+    }
+    
+    func nextButtonClicked(){
+        performSegue(withIdentifier: "toEnterCode", sender: nil)
     }
 }

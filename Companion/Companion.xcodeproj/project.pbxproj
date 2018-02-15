@@ -108,12 +108,12 @@
 		EB5261AE203485DC00BB31BF /* Login Flow View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EB5261AC203485C400BB31BF /* DisplayQRCodeViewController.swift */,
 				EB5261AA20347F1300BB31BF /* WelcomeScreenViewController.swift */,
+				EB5261AC203485C400BB31BF /* DisplayQRCodeViewController.swift */,
 				EB5261AF203487B700BB31BF /* ScanQRCodeViewController.swift */,
+				EB5261B5203487EC00BB31BF /* EnterCodeViewController.swift */,
 				EB5261B1203487C700BB31BF /* ConnectWithMyiaViewController.swift */,
 				EB5261B3203487D300BB31BF /* CongratulationsViewController.swift */,
-				EB5261B5203487EC00BB31BF /* EnterCodeViewController.swift */,
 			);
 			path = "Login Flow View Controllers";
 			sourceTree = "<group>";

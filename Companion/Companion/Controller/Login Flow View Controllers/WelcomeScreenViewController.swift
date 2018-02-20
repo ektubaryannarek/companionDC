@@ -28,7 +28,7 @@ class WelcomeScreenViewController: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
     }
     
-    func nextButtonClicked(){
+    @objc func nextButtonClicked(){
         performSegue(withIdentifier: "toDisplayQR", sender: nil)
     }
     

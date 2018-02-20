@@ -24,18 +24,17 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
     var output: AVCaptureMetadataOutput?
     var prevLayer: AVCaptureVideoPreviewLayer?
     
-    let supportedCodeTypes = [AVMetadataObjectTypeQRCode,
-                                      AVMetadataObjectTypeCode39Code,
-                                      AVMetadataObjectTypeCode93Code,
-                                      AVMetadataObjectTypeCode128Code,
-                                      AVMetadataObjectTypeEAN8Code,
-                                      AVMetadataObjectTypeEAN13Code,
-                                      AVMetadataObjectTypeFace,
-                                      AVMetadataObjectTypePDF417Code,
-                                      AVMetadataObjectTypeITF14Code,
-                                      AVMetadataObjectTypeDataMatrixCode,
-                                      AVMetadataObjectTypeInterleaved2of5Code,
-                                      AVMetadataObjectTypeQRCode]
+    let supportedCodeTypes = [AVMetadataObject.ObjectType.qr,
+                              AVMetadataObject.ObjectType.code39,
+                              AVMetadataObject.ObjectType.code93,
+                              AVMetadataObject.ObjectType.code128,
+                              AVMetadataObject.ObjectType.ean8,
+                              AVMetadataObject.ObjectType.ean13,
+                              AVMetadataObject.ObjectType.face,
+                              AVMetadataObject.ObjectType.pdf417,
+                              AVMetadataObject.ObjectType.itf14,
+                              AVMetadataObject.ObjectType.dataMatrix,
+                              AVMetadataObject.ObjectType.interleaved2of5]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +50,12 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         createSession()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if !(session?.isRunning)! {
+            session?.startRunning()
+        }
+    }
+    
     func makeNavBarTransparent(){
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -58,21 +63,21 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         self.navigationController?.view.backgroundColor = .clear
     }
     
-    func nextButtonClicked(){
+    @objc func nextButtonClicked(){
         performSegue(withIdentifier: "toConnectWithMyiaFromScan", sender: nil)
     }
     
-    func troubleButtonClicked(){
+    @objc func troubleButtonClicked(){
         performSegue(withIdentifier: "toEnterCode", sender: nil)
     }
     
     func createSession() {
-        device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-        
-        guard let captureDevice = device else {
-            print("Failed to get the camera device")
-            return
+        guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video),
+            let _ = try? AVCaptureDeviceInput(device: captureDevice) else {
+                print("Failed to get the camera device")
+                return
         }
+
         do {
             session = AVCaptureSession()
             let input = try AVCaptureDeviceInput(device: captureDevice)
@@ -85,80 +90,52 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
             // Initialize QR Code Frame to highlight the QR code
             qrCodeFrameView = UIView()
             
-            if let qrCodeFrameView = qrCodeFrameView {
-                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-                qrCodeFrameView.layer.borderWidth = 2
-                myView.addSubview(qrCodeFrameView)
-                myView.bringSubview(toFront: qrCodeFrameView)
-            }
+//            if let qrCodeFrameView = qrCodeFrameView {
+//                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+//                qrCodeFrameView.layer.borderWidth = 2
+//                view.addSubview(qrCodeFrameView)
+//                view.bringSubview(toFront: qrCodeFrameView)
+//            }
+            // Set the input device on the capture session.
+            
         } catch {
+            // If any error occurs, simply print it out and don't continue any more.
             print(error)
             return
         }
         
-        prevLayer = AVCaptureVideoPreviewLayer(session: session)
-        prevLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        
+        prevLayer = AVCaptureVideoPreviewLayer(session: session!)
+        prevLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         prevLayer?.frame.size = myView.frame.size
         myView.layer.addSublayer(prevLayer!)
         
         session?.startRunning()
-        
     }
     
-    func cameraWithPosition(_ position: AVCaptureDevicePosition) -> AVCaptureDevice? {
-        if let deviceDescoverySession = AVCaptureDeviceDiscoverySession.init(deviceTypes: [AVCaptureDeviceType.builtInWideAngleCamera],
-                                                                             mediaType: AVMediaTypeVideo,
-                                                                             position: AVCaptureDevicePosition.unspecified) {
-            for device in deviceDescoverySession.devices {
-                if device.position == position {
-                    return device
-                }
-            }
-        }
-        return nil
-    }
+    // AVCaptureMetadataOutputObjectsDelegate protocol
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!){
+    func metadataOutput( _ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+
         if metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRect.zero
             messageLabel.text = "No QR code is detected"
             return
         }
-        
+
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-        
-        if metadataObj.type == AVMetadataObjectTypeQRCode {
+
+        if metadataObj.type == AVMetadataObject.ObjectType.qr {
             // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barCodeObject = self.prevLayer?.transformedMetadataObject(for: metadataObj)
-            self.qrCodeFrameView?.frame = barCodeObject!.bounds
-            
+//            self.qrCodeFrameView?.frame = barCodeObject!.bounds
+
             if metadataObj.stringValue != nil {
                 self.messageLabel.text = metadataObj.stringValue
+                session?.stopRunning()
             }
         }
     }
-
-    // SWIFT 4.
-//    func metadataOutput( output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-//
-//        if metadataObjects.count == 0 {
-//            qrCodeFrameView?.frame = CGRect.zero
-//            messageLabel.text = "No QR code is detected"
-//            return
-//        }
-//
-//        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-//
-//        if metadataObj.type == AVMetadataObjectTypeQRCode {
-//            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
-//            let barCodeObject = self.prevLayer?.transformedMetadataObject(for: metadataObj)
-//            self.qrCodeFrameView?.frame = barCodeObject!.bounds
-//
-//            if metadataObj.stringValue != nil {
-//                self.messageLabel.text = metadataObj.stringValue
-//            }
-//        }
-//    }
 }
 
 

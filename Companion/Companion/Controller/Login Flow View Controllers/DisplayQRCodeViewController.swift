@@ -28,7 +28,7 @@ class DisplayQRCodeViewController: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
     }
     
-    func nextButtonClicked () {
+    @objc func nextButtonClicked () {
         performSegue(withIdentifier: "toScanQR", sender: nil)
     }
 

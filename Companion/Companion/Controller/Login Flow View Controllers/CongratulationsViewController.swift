@@ -28,7 +28,7 @@ class CongratulationsViewController: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
     }
     
-    func nextButtonClicked(){
+    @objc func nextButtonClicked(){
         performSegue(withIdentifier: "toMainScreen", sender: nil)
     }
 

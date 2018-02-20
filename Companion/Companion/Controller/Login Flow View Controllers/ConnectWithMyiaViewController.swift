@@ -27,7 +27,7 @@ class ConnectWithMyiaViewController: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
     }
     
-    func nextButtonClicked(){
+    @objc func nextButtonClicked(){
         performSegue(withIdentifier: "toCongratulation", sender: nil)
     }
 }

@@ -75,7 +75,7 @@ class MainViewController: UIViewController {
     }
     
     
-    func hideHamburgerMenu(){
+    @objc func hideHamburgerMenu(){
         dimView.isHidden = true
         menuTableLeadingConstraint.constant = -160
         hamburgerMenuIsVisible = true

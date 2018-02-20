@@ -28,7 +28,7 @@ class EnterCodeViewController: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
     }
     
-    func nextButtonClicked(){
+    @objc func nextButtonClicked(){
         performSegue(withIdentifier: "toConnectWithMyiaFromEnter", sender: nil)
     }
     

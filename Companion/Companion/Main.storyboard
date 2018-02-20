@@ -585,11 +585,18 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-XT-dVe" userLabel="messageLabel">
+                                        <rect key="frame" x="0.0" y="86" width="414" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.87452030493678368" green="1" blue="0.16703362542143996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="VB6-bu-12R" secondAttribute="trailing" id="2nh-xY-FSV"/>
                                     <constraint firstAttribute="trailing" secondItem="I0g-CX-Zal" secondAttribute="trailing" id="F5b-2j-AWA"/>
+                                    <constraint firstAttribute="trailing" secondItem="0GI-XT-dVe" secondAttribute="trailing" id="OsG-Xt-SDR"/>
                                     <constraint firstItem="VB6-bu-12R" firstAttribute="top" secondItem="I0g-CX-Zal" secondAttribute="bottom" id="SBV-xc-zIV"/>
                                     <constraint firstItem="I0g-CX-Zal" firstAttribute="leading" secondItem="Ox3-pv-IP1" secondAttribute="leading" id="WHY-0K-Hm6"/>
                                     <constraint firstItem="VB6-bu-12R" firstAttribute="leading" secondItem="Ox3-pv-IP1" secondAttribute="leading" id="Wlb-LW-3fz"/>
@@ -598,6 +605,8 @@
                                     <constraint firstItem="I0g-CX-Zal" firstAttribute="top" secondItem="EME-dk-CRO" secondAttribute="bottom" constant="8" id="a92-qg-8QR"/>
                                     <constraint firstItem="EME-dk-CRO" firstAttribute="top" secondItem="Ox3-pv-IP1" secondAttribute="top" constant="126" id="eHv-dI-g9C"/>
                                     <constraint firstItem="EME-dk-CRO" firstAttribute="leading" secondItem="Ox3-pv-IP1" secondAttribute="leading" constant="19" id="hqi-ga-m16"/>
+                                    <constraint firstItem="0GI-XT-dVe" firstAttribute="leading" secondItem="Ox3-pv-IP1" secondAttribute="leading" id="jCt-x5-U7k"/>
+                                    <constraint firstItem="0GI-XT-dVe" firstAttribute="top" secondItem="Ox3-pv-IP1" secondAttribute="top" constant="86" id="qJV-bA-Xcv"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
@@ -640,6 +649,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="messageLabel" destination="0GI-XT-dVe" id="5hs-rK-14O"/>
                         <outlet property="myView" destination="I0g-CX-Zal" id="yfO-DC-0pS"/>
                         <outlet property="nextButtonView" destination="LHR-GY-LpM" id="JhX-Lb-7OW"/>
                         <outlet property="troubleMessageView" destination="VB6-bu-12R" id="j02-x3-hgF"/>

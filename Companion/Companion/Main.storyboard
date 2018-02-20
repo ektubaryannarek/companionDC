@@ -640,6 +640,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myView" destination="I0g-CX-Zal" id="yfO-DC-0pS"/>
                         <outlet property="nextButtonView" destination="LHR-GY-LpM" id="JhX-Lb-7OW"/>
                         <outlet property="troubleMessageView" destination="VB6-bu-12R" id="j02-x3-hgF"/>
                         <segue destination="vS1-td-vN6" kind="show" identifier="toEnterCode" id="Uqa-SX-pds"/>
@@ -685,16 +686,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the text code currently displayed on your HUB" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0p-Yb-RYh">
-                                        <rect key="frame" x="19" y="126" width="376" height="65"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="65" id="ULu-83-WpU"/>
-                                        </constraints>
+                                        <rect key="frame" x="19" y="126" width="376" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mUi-YX-cVK">
-                                        <rect key="frame" x="60" y="311" width="294" height="76"/>
+                                        <rect key="frame" x="60" y="289" width="294" height="76"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
@@ -755,7 +753,41 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igs-MR-Gtc" userLabel="main View" customClass="GradientView" customModule="Companion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're now going to test the ability to transmit data from the app back to Myia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH4-yJ-arB">
+                                        <rect key="frame" x="68" y="126" width="278" height="64.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAP-hA-xAE" userLabel="connectionView">
+                                        <rect key="frame" x="114" y="270.66666666666674" width="186" height="260.33333333333326"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MYIA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b50-Nd-bpH">
+                                                <rect key="frame" x="0.0" y="0.0" width="186" height="48"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="b50-Nd-bpH" firstAttribute="leading" secondItem="DAP-hA-xAE" secondAttribute="leading" id="AaU-Fb-wuQ"/>
+                                            <constraint firstItem="b50-Nd-bpH" firstAttribute="top" secondItem="DAP-hA-xAE" secondAttribute="top" id="fJt-w5-vSm"/>
+                                            <constraint firstAttribute="trailing" secondItem="b50-Nd-bpH" secondAttribute="trailing" id="hdE-9c-JMv"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="KH4-yJ-arB" firstAttribute="leading" secondItem="igs-MR-Gtc" secondAttribute="leading" constant="68" id="HL4-PN-zg8"/>
+                                    <constraint firstItem="DAP-hA-xAE" firstAttribute="leading" secondItem="igs-MR-Gtc" secondAttribute="leading" constant="114" id="N3u-WN-1Ht"/>
+                                    <constraint firstAttribute="bottom" secondItem="DAP-hA-xAE" secondAttribute="bottom" constant="135" id="RXV-Am-QoA"/>
+                                    <constraint firstItem="DAP-hA-xAE" firstAttribute="top" secondItem="KH4-yJ-arB" secondAttribute="bottom" constant="80" id="pcr-nd-pmh"/>
+                                    <constraint firstAttribute="trailing" secondItem="KH4-yJ-arB" secondAttribute="trailing" constant="68" id="soM-ny-CRR"/>
+                                    <constraint firstItem="KH4-yJ-arB" firstAttribute="top" secondItem="igs-MR-Gtc" secondAttribute="top" constant="126" id="vTC-ng-P3e"/>
+                                    <constraint firstAttribute="trailing" secondItem="DAP-hA-xAE" secondAttribute="trailing" constant="114" id="zwF-wV-ksF"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
                                         <color key="value" red="0.27931955460000002" green="0.35864430670000003" blue="0.47496217489999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -804,7 +836,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0A-cd-BIU" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2430" y="-2372"/>
+            <point key="canvasLocation" x="2428.985507246377" y="-2372.2826086956525"/>
         </scene>
         <!--Congratulations-->
         <scene sceneID="4G4-8j-x5M">
@@ -820,7 +852,20 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dmz-Rm-HzA" userLabel="main View" customClass="GradientView" customModule="Companion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdv-Dv-eMf">
+                                        <rect key="frame" x="30" y="110" width="354" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Mdv-Dv-eMf" firstAttribute="top" secondItem="Dmz-Rm-HzA" secondAttribute="top" constant="110" id="PYs-lS-zrU"/>
+                                    <constraint firstItem="Mdv-Dv-eMf" firstAttribute="leading" secondItem="Dmz-Rm-HzA" secondAttribute="leading" constant="30" id="QZC-Ja-qp4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mdv-Dv-eMf" secondAttribute="trailing" constant="30" id="s29-fD-8FS"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
                                         <color key="value" red="0.27931955460000002" green="0.35864430670000003" blue="0.47496217489999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -869,7 +914,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xir-gb-O0b" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3325" y="-2372"/>
+            <point key="canvasLocation" x="3324.6376811594205" y="-2372.2826086956525"/>
         </scene>
     </scenes>
     <resources>
@@ -878,6 +923,6 @@
         <image name="link" width="100" height="104"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5bh-fi-LAu"/>
+        <segue reference="IyS-Ew-8jT"/>
     </inferredMetricsTieBreakers>
 </document>

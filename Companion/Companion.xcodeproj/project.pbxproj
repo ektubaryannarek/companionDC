@@ -16,6 +16,7 @@
 		EB5261B2203487C700BB31BF /* ConnectWithMyiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5261B1203487C700BB31BF /* ConnectWithMyiaViewController.swift */; };
 		EB5261B4203487D300BB31BF /* CongratulationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5261B3203487D300BB31BF /* CongratulationsViewController.swift */; };
 		EB5261B6203487EC00BB31BF /* EnterCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5261B5203487EC00BB31BF /* EnterCodeViewController.swift */; };
+		EB617B49203DC3B700947282 /* VoiceRecordingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB617B48203DC3B700947282 /* VoiceRecordingScreenViewController.swift */; };
 		EB9A212E2031E7CB00D8B49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A21292031E7CB00D8B49A /* AppDelegate.swift */; };
 		EB9A21342031EBB300D8B49A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9A21332031EBB300D8B49A /* Main.storyboard */; };
 		EB9A21372031EC0800D8B49A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A21362031EC0800D8B49A /* MainViewController.swift */; };
@@ -39,6 +40,7 @@
 		EB5261B1203487C700BB31BF /* ConnectWithMyiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWithMyiaViewController.swift; sourceTree = "<group>"; };
 		EB5261B3203487D300BB31BF /* CongratulationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsViewController.swift; sourceTree = "<group>"; };
 		EB5261B5203487EC00BB31BF /* EnterCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewController.swift; sourceTree = "<group>"; };
+		EB617B48203DC3B700947282 /* VoiceRecordingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecordingScreenViewController.swift; sourceTree = "<group>"; };
 		EB9A21292031E7CB00D8B49A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Controller/AppDelegate.swift; sourceTree = "<group>"; };
 		EB9A21332031EBB300D8B49A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EB9A21362031EC0800D8B49A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -118,9 +120,18 @@
 			path = "Login Flow View Controllers";
 			sourceTree = "<group>";
 		};
+		EB617B47203DC38600947282 /* Voice Recorder View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EB617B48203DC3B700947282 /* VoiceRecordingScreenViewController.swift */,
+			);
+			path = "Voice Recorder View Controllers";
+			sourceTree = "<group>";
+		};
 		EB9A21242031D41200D8B49A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EB617B47203DC38600947282 /* Voice Recorder View Controllers */,
 				EB5261AE203485DC00BB31BF /* Login Flow View Controllers */,
 				EB5261A420346A0100BB31BF /* Menu Item View Controllers */,
 				EB9A21362031EC0800D8B49A /* MainViewController.swift */,
@@ -216,6 +227,7 @@
 				EB9A21372031EC0800D8B49A /* MainViewController.swift in Sources */,
 				EBAB7D832033221C0047C7F5 /* LocationViewController.swift in Sources */,
 				EB9A212E2031E7CB00D8B49A /* AppDelegate.swift in Sources */,
+				EB617B49203DC3B700947282 /* VoiceRecordingScreenViewController.swift in Sources */,
 				EBAB7D8920332B5F0047C7F5 /* ShareViewController.swift in Sources */,
 				EBAB7D8720332B450047C7F5 /* LogoutViewController.swift in Sources */,
 				EB9A21392031F37100D8B49A /* MYIAWebViewController.swift in Sources */,

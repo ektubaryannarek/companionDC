@@ -97,18 +97,15 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
             output.metadataObjectTypes = supportedCodeTypes
             
             // Initialize QR Code Frame to highlight the QR code
-            qrCodeFrameView = UIView()
-            
+//            qrCodeFrameView = UIView()
 //            if let qrCodeFrameView = qrCodeFrameView {
 //                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
 //                qrCodeFrameView.layer.borderWidth = 2
 //                view.addSubview(qrCodeFrameView)
 //                view.bringSubview(toFront: qrCodeFrameView)
 //            }
-            // Set the input device on the capture session.
             
         } catch {
-            // If any error occurs, simply print it out and don't continue any more.
             print(error)
             return
         }
@@ -135,7 +132,6 @@ class ScanQRCodeViewController: UIViewController, AVCaptureMetadataOutputObjects
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
 
         if metadataObj.type == AVMetadataObject.ObjectType.qr {
-            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
 //            let barCodeObject = self.prevLayer?.transformedMetadataObject(for: metadataObj)
 //            self.qrCodeFrameView?.frame = barCodeObject!.bounds
 
